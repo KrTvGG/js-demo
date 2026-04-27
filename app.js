@@ -1,5 +1,9 @@
-console.log(Boolean(1));
-console.log(Boolean(''));
-console.log(Boolean(undefined));
-console.log(Boolean(null));
-console.log(Boolean(NaN));
+const money = 10;
+
+if (money > 50) {
+    console.log("Может купить наш продукт");
+} else if (money > 5) {
+    console.log('Куплен мина продукт');
+} else {
+    console.log('Не хватает баланса');
+}
