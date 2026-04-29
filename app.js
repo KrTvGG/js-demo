@@ -1,7 +1,19 @@
-const bmwX3Price = 100000;
-const fordFocusPrice = 10000;
-const budget = 20000;
+/*
+    Методом prompt получите ответ пользователя
+    на вопрос "Сколько будет 7 + или - 15?". Если ответ верен,
+    выведите в консоли "Успех", если нет - "Вы робот!",
+    а если он введёт "Я не робот", то тоже "Успех".
+*/
 
-let message = budget > bmwX3Price ? 'BMW' : 'Велосипед';
+const result = prompt("Сколько будет 7 + или - 15?");
 
-console.log(`Я могу купить ${message}`);
+switch (true) {
+    case Number(result) === 22:
+    case Number(result) === -8:
+    case String(result) === "Я не робот":
+        console.log("Успех");
+        break;
+    default:
+        console.log("Вы робот!");
+        break;
+}
