@@ -8,50 +8,34 @@
     Всегда менять исходный массив
 */
 
-let tasks = ['Задача 1'];
+const tasks = ['Задача 1'];
 
-tasks = addTask(tasks, 'test');
-tasks = addTask(tasks, 'test2');
-tasks = addTask(tasks, 'test3');
-
-console.log(tasks);
-
-tasks = removeTaskByName(tasks, 'test3');
-
-console.log(tasks);
-
-tasks = taskPushTop(tasks, 'test2');
-
-console.log(tasks);
-
-function addTask(tasks, newTask) {
-    tasks.push(newTask);
-    return tasks;
+function Add(task) {
+    tasks.push(task);
 }
 
-function removeTaskByName(tasks, taskName) {
-    if (!tasks.includes(taskName)) {
-        return tasks;
+function Remove(task) {
+    const index = tasks.indexOf(task);
+    if (index === -1) {
+        return;
     }
-
-    const taskIndex = tasks.indexOf(taskName);
-    const startTasks = tasks.slice(0, taskIndex);
-    const endTasks = tasks.slice(taskIndex + 1);
-    const newTasks = startTasks.concat(endTasks);
-
-    return newTasks;
+    tasks.splice(index, 1);
 }
 
-function taskPushTop(tasks, taskName) {
-    if (!tasks.includes(taskName)) {
-        return tasks;
+function Prioritize(task) {
+    const index = tasks.indexOf(task);
+    if (index === -1) {
+        return;
     }
-
-    const taskIndex = tasks.indexOf(taskName);
-    const startTasks = tasks.slice(0, taskIndex);
-    const endTasks = tasks.slice(taskIndex + 1);
-    const newTasks = startTasks.concat(endTasks);
-    newTasks.unshift(taskName);
-
-    return newTasks;
+    const oldTask = tasks[index];
+    tasks.splice(index, 1);
+    tasks.unshift(oldTask);
 }
+
+Add('Задача 2');
+Add('Задача 3');
+console.log(tasks); // ["Задача 1","Задача 2","Задача 3"]
+Remove('Задача 2');
+console.log(tasks); // ["Задача 1","Задача 3"]
+Prioritize('Задача 3');
+console.log(tasks); // ["Задача 3","Задача 1"]
