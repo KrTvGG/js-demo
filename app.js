@@ -1,20 +1,16 @@
-const roles = ["admin", "user", "superuser"];
+const users = ["Аня", "Вика", "Катя"];
+console.log(users); // ["Вася","Аня","Вика","Кристина"]
+users[2] = 'Кристина';
+console.log(users); // ["Вася","Аня","Вика","Кристина"]
 
-const userInfo = ["Аня", 25];
+const arrLenght = users.push('Никита');
+console.log(arrLenght, users); // 4 ["Аня","Вика","Кристина","Никита"]
 
-console.log(roles);
-console.log(roles[0]);
-console.log(roles[roles.length - 1]);
+users.unshift('Вася');
+console.log(users);  // ["Вася","Аня","Вика","Кристина","Никита"]
 
-console.log(roles.at(0));
-console.log(roles.at(-1));
+const el = users.pop();
+console.log(el, users); // Никита ["Вася","Аня","Вика","Кристина"]
 
-const usersAge = [
-    2040 - 2022,
-    20 - '6',
-    10 > 0 ? 5 : 0
-];
-console.log(usersAge);
-
-const userNames = new Array('Вася', "Петя", "Катя");
-console.log(userNames);
+const el2 = users.shift();
+console.log(el2, users); // Вася ["Аня","Вика","Кристина"]
