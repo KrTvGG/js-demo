@@ -1,17 +1,13 @@
-const tasks = ['Задача 1', "Задача 2", "Задача 3"];
+/*
+    Задача вывести в консоль строку "Я люблю JS !" из массива,
+    проходя циклом в обратном порядке, ге используя метод reverse.
+*/
 
-for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] === "Задача 2") {
-        continue;
-    }
-    console.log(tasks[i]);
+const arr = ['!', 'JS', 'люблю', 'Я'];
+const arr2 = [];
+
+for (let i = arr.length - 1; i >= 0; i--) {
+    arr2.push(arr[i]);
 }
 
-console.log('-----------------');
-
-for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] === "Задача 2") {
-        break;
-    }
-    console.log(tasks[i]);
-}
+console.log(arr2.join(' '));
