@@ -1,8 +1,3 @@
-function getData() {
-    return ['Антон', 16, "Москва"]
-}
-
-const [userName, age, city] = getData();
-
-console.log(userName, age, city);
-
+const data = [1, 2, 3, 4, 5, 6];
+const [one, two, ...others] = data;
+console.log(one, two, others);
