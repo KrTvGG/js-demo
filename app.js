@@ -1,25 +1,14 @@
-function add(a, b) {
-    return a + b;
+function power(pow) {
+    return function (num) {
+        return num**pow;
+    }
 }
 
-function subtract(a, b) {
-    return a - b;
-}
+const powerOfTwo = power(2);
+console.log(powerOfTwo(5)); // 25
+console.log(powerOfTwo(10)); // 100
 
-function power(a, b) {
-    return a ** b;
-}
+const powerOfThree = power(3);
+console.log(powerOfThree(5)); // 125
 
-// Фуннеция высшего порядка
-function calculate(a, b, fn) {
-    console.log(fn.name);
-    const res = fn(a, b);
-    return res;
-}
-
-let res = calculate(3, 5, add); // add
-console.log(res); // 8
-res = calculate(3, 5, subtract); // subtract
-console.log(res); // -2
-res = calculate(3, 5, power); // power
-console.log(res); // 243
+console.log(power(5)(4)); // 1024
