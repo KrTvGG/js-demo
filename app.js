@@ -1,13 +1,5 @@
-/*
-    Написать функцию, которпя возвращает true,
-    если элемент есть, и false, если нет.
-*/
-
-const arr = [2, 4, 4, 10];
-const some = (arr, el) => {
-    return arr.findIndex(arrEl => arrEl === el) !== -1;
-}
-console.log(some(arr, 1)); // false
-console.log(some(arr, 2)); // true
-console.log(arr.some(el => el === 1)); // false
-console.log(arr.some(el => el === 2)); // true
+const prices = [[2, 4], [3, 4], [10, [20, 50]]];
+const res = prices.flat(2); // Глубина вложенности
+console.log(res); // [2, 4, 3, 4, 10, 20, 50]
+const res2 = prices.flatMap(el => el.concat([1]));
+console.log(res2); // [2, 4, 1, 3, 4, 1, 10, Array(2), 1]
