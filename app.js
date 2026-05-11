@@ -1,12 +1,8 @@
-const userName = 'Вася Пупкин';
-console.log(userName[0]); // В
-console.log(userName[1]); // а
-console.log(userName.charAt(2)); // с
+/* вытащить имя и фамилию в отдельгые переменные */
+const userName = 'Вася aka Terminator Perdinator Пупкин';
 
-console.log(userName.length); // 11
-console.log(userName.indexOf('П')); // 5
-console.log(userName.lastIndexOf('н')); // 10
-console.log(userName.includes('Пуп')); // true
-
-console.log(userName.slice(5)); // Пупкин
-console.log(userName.slice(5, 8)); // Пуп
+const firstSpaceIndex = userName.indexOf(' ');
+const firstName = userName.slice(0, firstSpaceIndex);
+const lastSpaceIndex = userName.lastIndexOf(' ');
+const lastName = userName.slice(lastSpaceIndex + 1, userName.length);
+console.log(`${firstName} ${lastName}`);
